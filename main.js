@@ -38,7 +38,22 @@ function addNote(e) {
 
   button.addEventListener('click', viewMore);
 
-  //   function viewMore(e) {
+  function viewMore(e) {
+    div.classList.toggle('active');
+  }
 
-  //   }
+  document.querySelector('.text').value = '';
+
+  let deleteNote = document.createElement('button');
+  deleteNote.className = 'dlt-button';
+  deleteNote.appendChild(document.createTextNode('Delete Note'));
+  div.appendChild(deleteNote);
+
+  deleteNote.addEventListener('click', deleteNoteFc);
+  function deleteNoteFc(e) {
+    if (e.target.classList.contains('dlt-button')) {
+      let div = e.target.parentElement;
+      div.style.display = 'none';
+    }
+  }
 }

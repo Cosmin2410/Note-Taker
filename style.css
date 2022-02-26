@@ -4,8 +4,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #333;
   color: white;
-  padding-top: 20rem;
-  padding-left: 20rem;
+  margin-left: 30rem;
+  margin-top: 10rem;
 }
 
 .note-app {
@@ -25,7 +25,7 @@ label {
 
 .text {
   width: 30rem;
-  height: 1.5rem;
+  height: 2rem;
 }
 
 .submit {
@@ -50,6 +50,55 @@ label {
 
 .text-bubble {
   text-overflow: ellipsis;
-  white-space: nowrap; /* This One */
+  white-space: nowrap;
   overflow: hidden;
+  width: auto;
+  height: auto;
+}
+
+.active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  width: 20rem;
+  height: auto;
+  text-align: center;
+  border-radius: 15px;
+  padding: 1rem;
+}
+
+.active .text-bubble {
+  white-space: normal;
+  height: auto;
+  word-break: break-all;
+}
+
+.active .view-detail {
+  color: white;
+  background-color: white;
+  border: none;
+}
+
+.active .view-detail::after {
+  content: 'X';
+  color: black;
+  width: 5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  background-color: white;
+  border: 1px solid salmon;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.active .dlt-button {
+  display: none;
 }
